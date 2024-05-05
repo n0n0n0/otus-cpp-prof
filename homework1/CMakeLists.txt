@@ -50,6 +50,7 @@ endif()
 
 install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
 
+set(CPACK_PACKAGE_NAME helloworld_cli)
 set(CPACK_GENERATOR DEB)
 
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
