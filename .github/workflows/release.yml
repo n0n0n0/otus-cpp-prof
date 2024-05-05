@@ -19,9 +19,9 @@ jobs:
       - run: pwd
       - run: ls -al
       - run: cmake ./homework1 -DPATCH_VERSION=${{ github.run_number }}
-      - run: cmake --build ./homework1
+      - run: cmake --build .
 #      - run: cmake --build ./homework1 --target test
-      - run: cmake --build ./homework1 --target package
+      - run: cmake --build . --target package
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
