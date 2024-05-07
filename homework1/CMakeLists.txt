@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.13.0)
 
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VERSION 0.1.${PATCH_VERSION})
@@ -7,12 +7,11 @@ project(prof_hw1 VERSION 0.1.0 LANGUAGES C CXX)
 
 configure_file(version.h.in version.h)
 
-# include(CTest)
-# enable_testing()
-
 add_executable(helloworld_cli main.cpp)
 add_library(helloworld lib.cpp)
-#add_executable(test_version test_version.cpp)
+
+enable_testing()
+add_subdirectory(gtests)
 
 set_target_properties(helloworld_cli helloworld PROPERTIES
     CXX_STANDARD 14
@@ -48,7 +47,7 @@ else ()
     # )
 endif()
 
-install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
+install(TARGETS helloworld_cli helloworld_cli_test RUNTIME DESTINATION bin)
 
 set(CPACK_PACKAGE_NAME helloworld)
 set(CPACK_GENERATOR DEB)
