@@ -32,3 +32,5 @@
 *.app
 /build
 /homework1/build
+/homework2/build
+/homework2/.vscode
