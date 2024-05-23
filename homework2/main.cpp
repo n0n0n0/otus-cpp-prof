@@ -39,7 +39,8 @@ int main(int argc, char** argv){
     if(argc == 2) {
         std::string p1(argv[1]);
         if(p1.find("--version") != std::string::npos) {
-            std::cout << "Version is: " << PATCH_VERSION;
+            std::cout << "Version is: " << PATCH_VERSION << std::endl;
+            std::cout << "By Filatov Dmitrii, no@bk.ru, 2024" << std::endl;
             return 0;
         }
     }
