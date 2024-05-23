@@ -1,4 +1,4 @@
-name: 'C++ CI'
+name: 'C++ CI hw2'
 
 on:
   push:
@@ -37,6 +37,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./otus-ipfilter-0.1.${{ github.run_number }}-Linux.deb
-          asset_name: otus-ipfilter-0.1.${{ github.run_number }}-Linux.deb
+          asset_path: ./otus_ip_filter-0.1.${{ github.run_number }}-Linux.deb
+          asset_name: otus_ip_filter-0.1.${{ github.run_number }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
