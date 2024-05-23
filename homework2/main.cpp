@@ -3,6 +3,8 @@
 #include <vector>
 #include <algorithm>
 
+#include "version.h"
+
 using namespace std;
 
 void printIpVector(vector<string> v, string title = "") {
@@ -32,6 +34,15 @@ int main(int argc, char** argv){
     std::string input, ipaddr;
     std::vector<std::string> parts, ipVector;
     vector<vector<string>> ips;
+
+    
+    if(argc == 2) {
+        std::string p1(argv[1]);
+        if(p1.find("--version") != std::string::npos) {
+            std::cout << "Version is: " << PATCH_VERSION;
+            return 0;
+        }
+    }
 
     while(std::getline( std::cin, input )) {
         parts = split(input, '\t');
